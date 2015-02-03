@@ -1,0 +1,44 @@
+String CompressString (String str) {
+  int size = CompressStringCount(str);
+  if (size > str.length()) {
+    return str;
+  }  
+  
+  StringBuffer newStr = new StringBuffer();
+  char last = charAt(0);
+  int count = 1;
+  for (int i = 0; i < str.length(); i++) {
+    if (last == str.charAt(i)) {
+      count++;
+    } else {
+      newStr.append(last);
+      newStr.append(count);
+      last = charAt(i);
+      count = 1;
+    }
+  }  
+    
+  newStr.append(last);
+  newStr.append(count);  
+  
+  return newStr; 
+}
+
+int CompressStringCount (String str){
+  int count = 1;
+  char last = charAt(0);
+  int size = 0;
+  
+  for (int i = 0; i < str.length(); i++) {
+    if (str.charAt(i) == last) {
+      count++;
+    } else {
+      last = charAt(i);
+      size += 1 + String.valueOf(count).length();
+      count = 1;    
+    }
+  }
+  
+  size += 1 + String.valueOf(count).length();
+  return size;
+}
