@@ -1,0 +1,19 @@
+void deleteDuplicate (LinkedListNode n) {
+  if (head == null) {
+    return
+  }
+
+  LinkedListNode current = n;
+  
+  while (current.next != null) {
+
+    LinkedListNode runner = current;
+    while (runner.next != null) {
+      if (runner.data == current.data) {
+        current.next = runner.next.next; 
+      } else {
+        runner = runner.next;
+      }
+    }
+  }
+}

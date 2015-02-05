@@ -1,0 +1,11 @@
+public Boolean deleteNode (LinkedListNode n) {
+  if (n == null || n.next == null) {
+    return false;
+  }
+  
+  LinkedListNode next = n.next;
+  n.next = next.next;
+  n.data = next.data;
+  
+  return true;
+}

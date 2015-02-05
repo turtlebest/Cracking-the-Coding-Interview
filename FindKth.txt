@@ -1,0 +1,13 @@
+public static int findkth (LinkedListNode n, int k) {
+  if (n == null) {
+    return
+  }
+  
+  int i = findkth(n.next ,k) + 1;
+  if (i == k) {
+    system.out.println(n.data);
+  }
+ 
+  return i;
+  
+}

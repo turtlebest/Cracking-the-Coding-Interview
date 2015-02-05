@@ -1,0 +1,17 @@
+public static int findkth (LinkedListNode n, int k) {
+  if (n == null) {
+    return
+  }
+  
+  int i = 0;
+  while (n.next != null) {
+    i++;
+    
+    if (i == k) {
+      system.out.println(n.data);
+    }
+    
+    n = n.next;
+  
+  }  
+}
