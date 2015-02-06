@@ -1,0 +1,29 @@
+LinkedListNode addList (LinkedListNode L1, LinkedListNode L2, int carry) {
+  if (L1 == null && L2 == null && carry = 0) {
+    return null;
+  }
+  
+  LinkedListNode result = new LinkedListNode();
+  int value = carry;
+  if (L1 != null) {
+    value += L1.data;
+  }
+  
+  if (L2 != null) {
+    value += L2.data;
+  }
+  
+  result.data = value %10;
+  if (L1 != null || L2 != null) {
+    LinkedListNode newList = addList (
+                               L1 == null ? null : L1.next,
+                               L2 == null ? null : L2.next,
+                               value > 10 ? 1 : 0
+                               );
+                              
+    result.setNext(newList);                             
+  } 
+  
+  
+  return result;
+}

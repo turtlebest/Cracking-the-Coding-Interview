@@ -1,0 +1,16 @@
+LinkedListNode loopstart (LinkedListNode head) {
+  HashMap<Boolean, LinkedListNode> hash = new HashMap<Boolean, LinkedListNode LinkedListNode>;
+  
+  while (head) {
+  
+    if (hash.get(head)) {
+      return head;    
+    } else {
+      hash.set(head, true);
+      head = head->next;
+    }
+  
+  }  
+  
+  return head;
+}
