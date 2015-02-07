@@ -1,0 +1,45 @@
+int size = 100;
+int[] stackbuffer = new int[size*3];
+int[] stackpointer = {-1, -1, -1};
+
+void push(int stackNumber, int value) throws Exception {
+  if (stackponter[stackNumber] > size) {
+    throw new FullStackException();
+  }
+  
+  stackpointer[stackNumber]++;
+  stackbuffer[getStackLocation(stackNumber)] = value;
+}
+
+int pop(int stackNumber) throws Exception {
+  if (isEmpty(stackNumber)) {
+    throws new EmptyStackException();
+  }
+  
+  int value = stackbuffer[getStackLocation(stackNumber)];
+  stackbuffer[getStackLocation(stackNumber)] = 0;
+  stackpointer[stackNumber]--;
+  return value;
+}
+
+
+int peek(int StackNumber) {
+  if (isEmpty(stackNumber)) {
+    throws new EmptyStackException();
+  }  
+  
+  int index = getStackLocation(stackNumber);
+  return stackbuffer[stackNumber];
+}
+
+Boolean isEmpty(int stackNumber) {
+  if (stackpointer[stackNumber] == -1) {
+    return TRUE;
+  } else {
+    return FALSE;
+  } 
+}
+
+int getStackLocation(int stackNum) {
+  return size * stackNum + stackpointer[stackNum];
+}

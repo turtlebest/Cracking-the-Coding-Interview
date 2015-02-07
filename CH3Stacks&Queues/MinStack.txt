@@ -1,0 +1,45 @@
+public class StackWithMin extends Stack<Integer> {
+  Stack<Integer> s2;
+  public StackWithMin() {
+    s2 = new Stack<Integer>;
+  }
+
+  public void push(int value) {
+    if (value <= min()) {
+      s2.push(value);
+    }
+    
+    super.push(value);
+  }
+  
+  public Integer pop() {
+    int value = super.pop();
+    if (value == min()) {
+      s2.pop();
+    }
+    return value; 
+  }
+  
+  public int min() {
+    if (s2.isEmpty()) {
+      return Integer.MAX_VALUE;
+    } else {
+      return s2.peek()
+    }
+  }
+}  
+  int index = getStackLocation(stackNumber);
+  return stackbuffer[stackNumber];
+}
+
+Boolean isEmpty(int stackNumber) {
+  if (stackpointer[stackNumber] == -1) {
+    return TRUE;
+  } else {
+    return FALSE;
+  } 
+}
+
+int getStackLocation(int stackNum) {
+  return size * stackNum + stackpointer[stackNum];
+}
