@@ -1,0 +1,47 @@
+class SetOfStacks {
+  Arraylist<Stack> stacks = new ArrayList<Stack>();
+  int cur = 0;
+  int capacity = 0;
+  
+  public SetOfStacks(int capa) { 
+    Stack stack = new Stack(capa);
+    stacks.add(stack);
+    capacity = capa;
+  }
+  
+  public void push(int value) {
+    Stack last = getlastStack();
+    if (!full()) {
+      last.push(value);
+      cur++;
+    } else {
+      Stack stack = new Stack(capacity);
+      stack.push(value);
+      stacks.add(stacks);
+    } 
+  }
+  
+  public int pop() {
+    Stack last = getlastStack();    
+    int value = last.pop();
+    cur--;
+    if (cur == 0) {
+      stacks.remove(stacks.size()-1);    
+    }
+    return V;
+  }
+  
+  private Stack getlastStack() {
+    return stacks.pop();
+  }
+  
+  private Boolean full() {
+    if (cur == capacity) {
+      cur = 0;
+      return TRUE
+    } else {
+      return FALSE;
+    }
+  }
+
+}
